@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Test Documentation</title>
+        <style>
+            body {
+                text-rendering: optimizeLegibility;
+                font-variant-ligatures: common-ligatures;
+                font-kerning: normal;
+                margin-left: 2em;
+            }
+
+            body > ul > li {
+                font-family: Source Serif Pro, PT Sans, Trebuchet MS, Helvetica, Arial;
+                font-size: 2em;
+            }
+
+            h2 {
+                font-family: Tahoma, Helvetica, Arial;
+                font-size: 3em;
+            }
+
+            ul {
+                list-style: none;
+                margin-bottom: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 id="Tests\Unit\PostTest">Unit\Post</h2>
+        <ul>
+            <li style="color: #555753;">✓ Post belongs to user</li>
+            <li style="color: #555753;">✓ Post belogns to a category</li>
+            <li style="color: #555753;">✓ Post belongs to many tags</li>
+            <li style="color: #555753;">✓ Posts are identified by slug</li>
+            <li style="color: #555753;">✓ Posts creates own slug</li>
+        </ul>
+        <h2 id="Tests\Unit\UserTest">Unit\User</h2>
+        <ul>
+            <li style="color: #555753;">✓ User has many posts</li>
+        </ul>
+        <h2 id="Tests\Feature\Api\PostCreationTest">Feature\Api\PostCreation</h2>
+        <ul>
+            <li style="color: #555753;">✓ A guest user cannot save posts</li>
+            <li style="color: #555753;">✓ A logged in user can save new post</li>
+            <li style="color: #555753;">✓ Certain fields are obligatory</li>
+        </ul>
+        <h2 id="Tests\Feature\Api\PostDeletionTest">Feature\Api\PostDeletion</h2>
+        <ul>
+            <li style="color: #555753;">✓ Guests cannot delete post</li>
+            <li style="color: #555753;">✓ Non author cannot delete post</li>
+            <li style="color: #555753;">✓ Author can delete own post</li>
+        </ul>
+        <h2 id="Tests\Feature\Api\PostEditingTest">Feature\Api\PostEditing</h2>
+        <ul>
+            <li style="color: #555753;">✓ Guest cannot update post</li>
+            <li style="color: #555753;">✓ Non author cannot update post</li>
+            <li style="color: #555753;">✓ Author can update a post</li>
+        </ul>
+        <h2 id="Tests\Feature\Api\PostListingTest">Feature\Api\PostListing</h2>
+        <ul>
+            <li style="color: #555753;">✓ User can see post listing</li>
+        </ul>
+        <h2 id="Tests\Feature\Api\PostShowingTest">Feature\Api\PostShowing</h2>
+        <ul>
+            <li style="color: #555753;">✓ User can see single post</li>
+        </ul>
+        <h2 id="Tests\Feature\PostCreationTest">Feature\PostCreation</h2>
+        <ul>
+            <li style="color: #555753;">✓ A guest user cannot see post creation from</li>
+            <li style="color: #555753;">✓ A guest user cannot save posts</li>
+            <li style="color: #555753;">✓ A logged in user can see post creation form</li>
+            <li style="color: #555753;">✓ A logged in user can save new post</li>
+            <li style="color: #555753;">✓ Certain fields are obligatory</li>
+        </ul>
+        <h2 id="Tests\Feature\PostDeletionTest">Feature\PostDeletion</h2>
+        <ul>
+            <li style="color: #555753;">✓ Guests cannot delete post</li>
+            <li style="color: #555753;">✓ Non author cannot delete post</li>
+            <li style="color: #555753;">✓ Author can delete own post</li>
+        </ul>
+        <h2 id="Tests\Feature\PostEditingTest">Feature\PostEditing</h2>
+        <ul>
+            <li style="color: #555753;">✓ Guest cannot see update form</li>
+            <li style="color: #555753;">✓ Guest cannot update post</li>
+            <li style="color: #555753;">✓ Author user can see update form</li>
+            <li style="color: #555753;">✓ Non author cannot update post</li>
+            <li style="color: #555753;">✓ Non author cannot see update form</li>
+            <li style="color: #555753;">✓ Author can update a post</li>
+            <li style="color: #555753;">✓ When post is updated event is raised</li>
+            <li style="color: #555753;">✓ When post is updated job is queued</li>
+            <li style="color: #555753;">✓ When post is updated an email is sent</li>
+        </ul>
+        <h2 id="Tests\Feature\PostListingTest">Feature\PostListing</h2>
+        <ul>
+            <li style="color: #555753;">✓ User can see post listing</li>
+        </ul>
+        <h2 id="Tests\Feature\PostShowingTest">Feature\PostShowing</h2>
+        <ul>
+            <li style="color: #555753;">✓ User can see single post</li>
+        </ul>
+    </body>
+</html>

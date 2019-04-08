@@ -3,11 +3,21 @@
 namespace Acme\Models;
 
 use Illuminate\Support\Str;
+use Acme\Events\PostWasUpdated;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
     protected $guarded = [];
+
+    // public static function boot()
+    // {
+    //     parent::boot();
+
+    //     static::updated(function ($post) {
+    //         event(new PostWasUpdated($post));
+    //     });
+    // }
 
     public function getRouteKeyName()
     {

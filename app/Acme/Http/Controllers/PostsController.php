@@ -4,27 +4,32 @@ namespace Acme\Http\Controllers;
 
 use Acme\Models\Post;
 use Illuminate\Http\Request;
-use Acme\Events\PostWasUpdated;
 use Acme\Http\Requests\PostRequest;
+use Acme\Repostories\PostRepository;
 use App\Http\Controllers\Controller;
 
 class PostsController extends Controller
 {
-    public function __construct()
+    protected $postsRepo;
+
+    public function __construct(PostRepository $postsRepo)
     {
         $this->middleware('auth')->except('show', 'index');
+        $this->middleware('can:update,post')->only('edit', 'update');
+        $this->middleware('can:delete,post')->only('destroy');
+        $this->postsRepo = $postsRepo;
     }
 
     public function index()
     {
-        $posts = Post::with('user', 'category', 'tags')->get();
+        $posts = $this->postsRepo->index();
 
         return view('posts.index', compact('posts'));
     }
 
     public function show(Post $post)
     {
-        $post->load('user', 'category', 'tags');
+        $post = $this->postsRepo->show($post);
 
         return view('posts.show', compact('post'));
     }
@@ -36,7 +41,7 @@ class PostsController extends Controller
 
     public function store(PostRequest $request)
     {
-        $post = $request->user()->posts()->create([
+        $post = $this->postsRepo->store([
             'title' => $request->title,
             'category_id' => $request->category_id,
         ]);
@@ -46,22 +51,23 @@ class PostsController extends Controller
 
     public function edit(Post $post)
     {
-        $this->authorize('update', $post);
-
         return view('posts.edit', compact('post'));
     }
 
     public function update(Request $request, Post $post)
     {
-        $this->authorize('update', $post);
-
-        $post->update([
+        $this->postsRepo->update($post, [
             'title' => $request->title,
             'category_id' => $request->category_id,
         ]);
 
-        event(new PostWasUpdated($post));
-
         return redirect()->route('posts.show', $post);
+    }
+
+    public function destroy(Post $post)
+    {
+        $this->postsRepo->destroy($post);
+
+        return redirect()->to('/');
     }
 }
