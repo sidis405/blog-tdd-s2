@@ -2,10 +2,13 @@
 
 namespace Tests\Unit;
 
-use App\Tag;
-use App\Post;
 use Tests\TestCase;
+use Acme\Models\Tag;
+use Acme\Models\Post;
+use Acme\Models\User;
+use Acme\Models\Category;
 use Illuminate\Support\Str;
+use Illuminate\Support\Collection;
 
 class PostTest extends TestCase
 {
@@ -25,7 +28,7 @@ class PostTest extends TestCase
         $this->post->load('user');
 
         // assert
-        $this->assertInstanceOf('App\User', $this->post->user);
+        $this->assertInstanceOf(User::class, $this->post->user);
     }
 
     /** @test */
@@ -35,7 +38,7 @@ class PostTest extends TestCase
         $this->post->load('category');
 
         // assert
-        $this->assertInstanceOf('App\Category', $this->post->category);
+        $this->assertInstanceOf(Category::class, $this->post->category);
     }
 
     /** @test */
@@ -49,8 +52,8 @@ class PostTest extends TestCase
         $this->post->load('tags');
 
         // assert
-        $this->assertInstanceOf('Illuminate\Support\Collection', $this->post->tags);
-        $this->assertInstanceOf('App\Tag', $this->post->tags->first());
+        $this->assertInstanceOf(Collection::class, $this->post->tags);
+        $this->assertInstanceOf(Tag::class, $this->post->tags->first());
     }
 
     /** @test */

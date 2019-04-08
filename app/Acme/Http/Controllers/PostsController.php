@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Acme\Http\Controllers;
 
-use App\Post;
+use Acme\Models\Post;
 use Illuminate\Http\Request;
-use App\Events\PostWasUpdated;
-use App\Http\Requests\PostRequest;
+use Acme\Events\PostWasUpdated;
+use Acme\Http\Requests\PostRequest;
+use App\Http\Controllers\Controller;
 
 class PostsController extends Controller
 {

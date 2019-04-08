@@ -2,9 +2,9 @@
 
 namespace Tests\Unit;
 
-use App\Post;
-use App\User;
 use Tests\TestCase;
+use Acme\Models\Post;
+use Acme\Models\User;
 
 class UserTest extends TestCase
 {
@@ -20,6 +20,6 @@ class UserTest extends TestCase
 
         // assert
         $this->assertInstanceOf('Illuminate\Support\Collection', $user->posts);
-        $this->assertInstanceOf('App\Post', $user->posts->first());
+        $this->assertInstanceOf(Post::class, $user->posts->first());
     }
 }

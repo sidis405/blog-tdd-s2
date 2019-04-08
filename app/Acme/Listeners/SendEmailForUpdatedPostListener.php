@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Listeners;
+namespace Acme\Listeners;
 
-use App\Jobs\SendUpdateJob;
-use App\Events\PostWasUpdated;
+use Acme\Jobs\SendUpdateJob;
+use Acme\Events\PostWasUpdated;
 
 class SendEmailForUpdatedPostListener
 {

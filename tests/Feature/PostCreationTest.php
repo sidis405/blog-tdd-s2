@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Post;
 use Tests\TestCase;
+use Acme\Models\Post;
 
 class PostCreationTest extends TestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Mail;
+namespace Acme\Mail;
 
-use App\Post;
+use Acme\Models\Post;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;

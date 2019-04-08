@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Events;
+namespace Acme\Events;
 
-use App\Post;
+use Acme\Models\Post;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;

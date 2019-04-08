@@ -1,6 +1,5 @@
 ### Testing
 
-
 [x] utente si puo registrare
 [x] utente si puo loggare
 
@@ -16,7 +15,7 @@
 
 [x] autore di un certo post lo puo modificare
 
-- quando post viene modificato, una mail viene inviata
+[x] quando post viene modificato, una mail viene inviata
 
 - admin puo modificare qualsiasi post
 - admin puo cancellare post

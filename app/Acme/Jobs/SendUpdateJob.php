@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Jobs;
+namespace Acme\Jobs;
 
 use Illuminate\Bus\Queueable;
-use App\Mail\APostWasUpdatedEmail;
+use Acme\Mail\APostWasUpdatedEmail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;

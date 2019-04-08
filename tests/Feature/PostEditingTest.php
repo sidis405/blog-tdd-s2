@@ -2,11 +2,11 @@
 
 namespace Tests\Feature;
 
-use App\Post;
 use Tests\TestCase;
-use App\Jobs\SendUpdateJob;
-use App\Events\PostWasUpdated;
-use App\Mail\APostWasUpdatedEmail;
+use Acme\Models\Post;
+use Acme\Jobs\SendUpdateJob;
+use Acme\Events\PostWasUpdated;
+use Acme\Mail\APostWasUpdatedEmail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Queue;

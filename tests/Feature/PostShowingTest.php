@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Tag;
-use App\Post;
 use Tests\TestCase;
+use Acme\Models\Tag;
+use Acme\Models\Post;
 
 class PostShowingTest extends TestCase
 {
