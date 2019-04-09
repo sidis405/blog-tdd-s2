@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
     @foreach($posts as $post)
         <h4><a href="{{ route('posts.show', $post) }}">{{ $post->title }}</a></h4>
         <span>{{ $post->user->name }}</span>

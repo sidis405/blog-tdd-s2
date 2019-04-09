@@ -28,6 +28,10 @@
         </style>
     </head>
     <body>
+        <h2 id="Tests\Unit\Chat\MessageTest">Unit\Chat\Message</h2>
+        <ul>
+            <li style="color: #555753;">✓ Message belongs to a user</li>
+        </ul>
         <h2 id="Tests\Unit\PostTest">Unit\Post</h2>
         <ul>
             <li style="color: #555753;">✓ Post belongs to user</li>
@@ -39,6 +43,7 @@
         <h2 id="Tests\Unit\UserTest">Unit\User</h2>
         <ul>
             <li style="color: #555753;">✓ User has many posts</li>
+            <li style="color: #555753;">✓ User has many messages</li>
         </ul>
         <h2 id="Tests\Feature\Api\CategoryTest">Feature\Api\Category</h2>
         <ul>
@@ -75,6 +80,17 @@
         <h2 id="Tests\Feature\Api\PostShowingTest">Feature\Api\PostShowing</h2>
         <ul>
             <li style="color: #555753;">✓ User can see single post</li>
+        </ul>
+        <h2 id="Tests\Feature\Chat\MessageListingTest">Feature\Chat\MessageListing</h2>
+        <ul>
+            <li style="color: #555753;">✓ Guest user cannot see messages</li>
+            <li style="color: #555753;">✓ Authed user can see messages</li>
+        </ul>
+        <h2 id="Tests\Feature\Chat\MessageSendingTest">Feature\Chat\MessageSending</h2>
+        <ul>
+            <li style="color: #555753;">✓ Guest user cannot send message</li>
+            <li style="color: #555753;">✓ Logged in user can send message</li>
+            <li style="color: #555753;">✓ When message is created an event is sent in broadcast</li>
         </ul>
         <h2 id="Tests\Feature\PostCreationTest">Feature\PostCreation</h2>
         <ul>
