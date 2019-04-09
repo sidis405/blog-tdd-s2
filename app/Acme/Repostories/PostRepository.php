@@ -9,7 +9,7 @@ class PostRepository
 {
     public function index()
     {
-        return Post::with('user', 'category', 'tags')->get();
+        return Post::with('user', 'category', 'tags')->latest()->get();
     }
 
     public function show(Post $post)

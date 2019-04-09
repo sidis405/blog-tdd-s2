@@ -5,9 +5,11 @@ namespace Acme\Models;
 use Illuminate\Support\Str;
 use Acme\Events\PostWasUpdated;
 use Illuminate\Database\Eloquent\Model;
+use Spiritix\LadaCache\Database\LadaCacheTrait;
 
 class Post extends Model
 {
+    // use LadaCacheTrait;
     protected $guarded = [];
 
     // public static function boot()

@@ -28,17 +28,19 @@ class PostShowingTest extends TestCase
         ]);
 
         $response->assertJsonStructure([
-            'title',
-            'user' => [
-                'name',
-                'email',
-            ],
-            'category' => [
-                'name',
-            ],
-            'tags' => [
-                ['name']
-            ],
+            'data' => [
+                'title',
+                'user' => [
+                    'name',
+                    'email',
+                ],
+                'category' => [
+                    'name',
+                ],
+                'tags' => [
+                    ['name']
+                ],
+            ]
         ]);
 
         $response->assertSee($post->user->name);

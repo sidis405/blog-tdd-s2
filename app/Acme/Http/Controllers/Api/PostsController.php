@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Acme\Http\Requests\PostRequest;
 use Acme\Repostories\PostRepository;
 use App\Http\Controllers\Controller;
+use Acme\Http\Resources\PostResource;
+use Acme\Http\Resources\PostsCollection;
 
 class PostsController extends Controller
 {
@@ -22,12 +24,13 @@ class PostsController extends Controller
 
     public function index()
     {
-        return $this->postsRepo->index();
+        // return PostResource::collection($this->postsRepo->index());
+        return new PostsCollection($this->postsRepo->index());
     }
 
     public function show(Post $post)
     {
-        return $this->postsRepo->show($post);
+        return new PostResource($this->postsRepo->show($post));
     }
 
     public function store(PostRequest $request)

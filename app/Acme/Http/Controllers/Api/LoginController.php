@@ -3,9 +3,9 @@
 namespace Acme\Http\Controllers\Api;
 
 use JWTAuth;
-use JWTAuthException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Tymon\JWTAuth\Exceptions\JWTException;
 
 class LoginController extends Controller
 {
@@ -18,13 +18,13 @@ class LoginController extends Controller
             if (! $token = JWTAuth::attempt($credentials)) {
                 return response()->json([
                     'result' => 'error',
-                    'token' => 'invalid_credentials',
-                ], 201);
+                    'message' => 'invalid_credentials',
+                ], 401);
             }
-        } catch (JWTAuthException $e) {
+        } catch (JWTException $e) {
             return response()->json([
                 'result' => 'error',
-                'message' => $e->getMessage(),
+                'message' => 'general_error',
             ], 500);
         }
 

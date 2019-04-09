@@ -4,11 +4,13 @@ namespace Acme\Models;
 
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
+use Spiritix\LadaCache\Database\LadaCacheTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
+    // use LadaCacheTrait;
 
     /**
      * The attributes that are mass assignable.

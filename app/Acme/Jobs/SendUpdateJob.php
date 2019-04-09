@@ -25,7 +25,6 @@ class SendUpdateJob implements ShouldQueue
     {
         $this->post = $post;
     }
-
     /**
      * Execute the job.
      *
